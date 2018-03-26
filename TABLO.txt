@@ -1,0 +1,14 @@
+                 KUTUPHANE OTOMASYONU DATABASE CREATELERI
+
+create table uye(uye_id int primary key,uye_adi varchar(20),uye_soyadi varchar(20),adminlik int);
+create table yazar(yazar_id int primary key,yazar_adi varchar(20),yazar_soyadi varchar(20),mail varchar(20));
+create table kategori(kategori_id int primary key,kategori_adi varchar(20));
+create table editor(editor_id int primary key,editor_adi varchar(20));
+create table yayinevi(yayinevi_id int primary key,yayinevi_adi varchar(20),iletisim varchar(50));
+create table kutuphane(kitap_id int primary key,kitap_adi varchar(30),sayfa_sayisi int,basim_tarihi int,yayinevi_id int references yayinevi(yayinevi_id));
+create table kutuphane_stok(stok_id int primary key,kitap_id int references kutuphane(kitap_id),barcode int);
+create table yorum(yorum_id int primary key,icerik varchar(100),kitap_id int references kutuphane(kitap_id),uye_id int references uye(uye_id),yorum_tarihi date);
+create table suresiz(suresiz_id int primary key,yazar_id int references yazar(yazar_id),kitap_id int references kutuphane(kitap_id),kategori_id int references kategori(kategori_id));
+create table sureli(sureli_id int primary key,sayi int,editor_id int references editor(editor_id),kitap_id int references kutuphane(kitap_id));
+create table odunc(odunc_id int primary key,uye_id int references uye(uye_id),stok_id int references kutuphane_stok(stok_id),odunc_tarihi date);
+
