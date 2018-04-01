@@ -69,7 +69,7 @@ public class Kutuphane {
     }
 
     
-    public void kitapEkle(int suresizid, int yazarid, int kategoriid, int kitapid, String kitapadi, int sayfa, int basim, int yayineviid) {
+    public void kitapEkle(int suresizid, int yazarid, int kategoriid, int kitapid, String kitapadi, int sayfa, int basim, int yayineviid,int stokid,int barcode,int status) {
 
     }
 

@@ -3,13 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/classlar/Sureli.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/KullaniciEkle.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/classlar/Editor.java</file>
             <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/MisafirArama.java</file>
-            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/AdminAnaSayfasi.java</file>
-            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/AdminOduncVer.java</file>
-            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/KitapEkle.java</file>
             <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/classlar/Kutuphane.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/Giris.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/SureliKitapSil.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/classlar/Suresiz.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/classlar/Sureli.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/classlar/Odunc.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/classlar/KutuphaneStok.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/KitapEkle.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/AdminOduncVer.java</file>
             <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/Baglantı/Baglanti.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/classlar/Kategori.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/SureliKitapEkle.java</file>
+            <file>file:/C:/Users/idea/Documents/NetBeansProjects/Kutuphane/src/kutuphane/Formlar/KitapSil.java</file>
         </group>
     </open-files>
 </project-private>

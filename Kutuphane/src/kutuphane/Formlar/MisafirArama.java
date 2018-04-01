@@ -127,13 +127,16 @@ public class MisafirArama extends javax.swing.JFrame {
 
         int ara = (Integer.parseInt(id.getText()));
         String ekle = "";
+        //String dizayn = "";
 
         try {
-            PreparedStatement stat = bag.c.prepareStatement("select * from kutuphane where kitap_id='" + ara + "'");
+            PreparedStatement stat = bag.c.prepareStatement("select * from kutuphane where kitap_id=(select kitap_id from kutuphane_stok where kitap_id='" + ara + "' and status=0)");
             ResultSet Rs = stat.executeQuery();
             while (Rs.next()) {
-                ekle = ekle + Rs.getInt(1) + "   " + Rs.getString(2) + "   " + Rs.getInt(3) + "   " + Rs.getInt(4) + "   " + Rs.getInt(5) + "\n";
+              //  dizayn="Kitap  İd  "+"Kitap Adı  "+"Sayfa Sayısı"+"Basım Tarihi  "+"\n";
+                ekle = ekle + Rs.getInt(1) + "   " + Rs.getString(2) + "   " + Rs.getInt(3) + "   " + Rs.getInt(4) + "\n";
                 if (ekle == "") {
+                    JOptionPane.showMessageDialog(null, "Aranan Kitap Bulunamadı");
                     break;
                 }
                 AramaTablosu.setText(ekle);
@@ -146,7 +149,7 @@ public class MisafirArama extends javax.swing.JFrame {
             System.out.println(e.toString());
 
         }
-        JOptionPane.showMessageDialog(null, "Aranan Kitap Bulunamadı");
+        //JOptionPane.showMessageDialog(null, "Aranan Kitap Bulunamadı");
         bag.bagKapat();
 
 
@@ -159,6 +162,7 @@ public class MisafirArama extends javax.swing.JFrame {
 
         String ara = (ad.getText());
         String ekle = "";
+        //String dizayn2="";
         //jButton4.isEnabled();
         //jButton4.isDisplayable(false);
         //jButton4.setEnabled(false);
@@ -167,10 +171,13 @@ public class MisafirArama extends javax.swing.JFrame {
             PreparedStatement stat = bag.c.prepareStatement("select * from kutuphane where kitap_adi='" + ara + "'");
             ResultSet Rs = stat.executeQuery();
             while (Rs.next()) {
-                ekle = ekle + Rs.getInt(1) + "   " + Rs.getString(2) + "   " + Rs.getInt(3) + "   " + Rs.getInt(4) + "   " + Rs.getInt(5) + "\n";
+                //dizayn2="Kitap  İd  "+"Kitap Adı  "+"Sayfa Sayısı"+"Basım Tarihi  "+"\n";
+                ekle = ekle + Rs.getInt(1) + "   " + Rs.getString(2) + "   " + Rs.getInt(3) + "   " + Rs.getInt(4) + " \n";
                 if (ekle == "") {
+                    JOptionPane.showMessageDialog(null, "Aranan Kitap Bulunamadı");
                     break;
                 }
+               //AramaTablosu.setText(dizayn2);
                 AramaTablosu.setText(ekle);
                 JOptionPane.showMessageDialog(null, "Aranan Kitap Bulundu");
             }
@@ -182,7 +189,7 @@ public class MisafirArama extends javax.swing.JFrame {
             System.out.println(e.toString());
 
         }
-        JOptionPane.showMessageDialog(null, "Aranan Kitap Bulunamadı");
+        //JOptionPane.showMessageDialog(null, "Aranan Kitap Bulunamadı");
         bag.bagKapat();
     }//GEN-LAST:event_jButton2ActionPerformed
 

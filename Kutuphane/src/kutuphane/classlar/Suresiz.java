@@ -3,6 +3,7 @@ package kutuphane.classlar;
 import kutuphane.Formlar.Baglantı.Baglanti;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import kutuphane.Formlar.KitapEkle;
 
 public class Suresiz extends Kutuphane {
 
@@ -51,13 +52,17 @@ public class Suresiz extends Kutuphane {
     }
 
     @Override
-    public void kitapEkle(int suresizid, int yazarid, int kategoriid, int kitapid, String kitapadi, int sayfa, int basim, int yayineviid) {
+    public void kitapEkle(int suresizid, int yazarid, int kategoriid, int kitapid, String kitapadi, int sayfa, int basim, int yayineviid, int stokid, int barcode, int status) {
 
         Baglanti bag = new Baglanti();
         bag.baglanti();
 
+        KitapEkle ke = new KitapEkle();
+
         String sql1 = "INSERT INTO kutuphane values ('" + kitapid + "','" + kitapadi + "','" + sayfa + "','" + basim + "','" + yayineviid + "')";
-        String sql2 = "INSERT INTO suresiz values ('" + kitapid + "','" + suresizid + "','" + yazarid + "','" + kategoriid + "')";
+        System.out.println("------------------------------");
+        String sql2 = "INSERT INTO suresiz values ('" + suresizid + "','" + yazarid + "','" + kitapid + "','" + kategoriid + "')";
+        String sql3 = "INSERT INTO kutuphane_stok values ('" + stokid + "','" + kitapid + "','" + barcode + "','" + status + "')";
 
         try {
             Statement sta = bag.c.createStatement();
@@ -77,6 +82,16 @@ public class Suresiz extends Kutuphane {
             JOptionPane.showMessageDialog(null, "Ekleme Başarısız");
             System.out.println(e.toString());
         }
+//
+        try {
+            Statement sta = bag.c.createStatement();
+            sta.execute(sql3);
+            JOptionPane.showMessageDialog(null, "Ekleme Başarılı");
+        } catch (Exception e) {
+            //
+            JOptionPane.showMessageDialog(null, "Ekleme Başarısız");
+            System.out.println(e.toString());
+        }
         bag.bagKapat();
 
     }
@@ -86,10 +101,22 @@ public class Suresiz extends Kutuphane {
         Baglanti bag = new Baglanti();
         String sql1 = "DELETE from kutuphane where kitap_id='" + id + "'";
         String sql2 = "DELETE from suresiz where kitap_id='" + id + "'";
+        String sql3 = "DELETE from kutuphane_stok where kitap_id='" + id + "'";
         try {
             Statement sta = bag.c.createStatement();
             sta.executeUpdate(sql2);
 
+            JOptionPane.showMessageDialog(null, "Silme İşlemi Başarılı");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Silme İşlemi Başarısız");
+            System.out.println(e.toString());
+
+        }
+
+        try {
+            Statement sta = bag.c.createStatement();
+            sta.executeUpdate(sql3);
             JOptionPane.showMessageDialog(null, "Silme İşlemi Başarılı");
         } catch (Exception e) {
             e.printStackTrace();
@@ -107,6 +134,7 @@ public class Suresiz extends Kutuphane {
             System.out.println(e.toString());
 
         }
+
         bag.bagKapat();
     }
 

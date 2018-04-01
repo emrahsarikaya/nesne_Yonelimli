@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
@@ -34,6 +34,9 @@
                   <Component id="jLabel3" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="jLabel10" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="jLabel9" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="jLabel11" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -47,10 +50,15 @@
                   <Component id="yayineviid" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                   <Component id="editorid" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                   <Component id="sayi" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
-                  <Component id="sureliid" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                   <Component id="kitapid" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="stokid" alignment="0" max="32767" attributes="0"/>
+                      <Component id="sureliid" alignment="0" pref="113" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="barcode" min="-2" pref="113" max="-2" attributes="0"/>
+                  <Component id="status" min="-2" pref="113" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="69" max="32767" attributes="0"/>
+              <EmptySpace pref="242" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -100,7 +108,27 @@
                   <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="sureliid" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="86" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="stokid" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="barcode" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                  <Component id="status" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="108" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -169,6 +197,30 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="S&#xfc;reli &#x130;d :"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Status :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Stok &#x130;d ::"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Barcode :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="stokid">
+    </Component>
+    <Component class="javax.swing.JTextField" name="barcode">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="barcodeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="status">
     </Component>
   </SubComponents>
 </Form>

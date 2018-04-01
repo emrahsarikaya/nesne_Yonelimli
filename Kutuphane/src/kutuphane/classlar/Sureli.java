@@ -51,14 +51,14 @@ public class Sureli extends Kutuphane {
     }
 
     @Override
-    public void kitapEkle(int sureliid, int editorid, int sayi, int kitapid, String kitapadi, int sayfa, int basim, int yayineviid) {
+    public void kitapEkle(int sureliid, int editorid, int sayi, int kitapid, String kitapadi, int sayfa, int basim, int yayineviid, int stokid, int barcode, int status) {
 
         Baglanti bag = new Baglanti();
         bag.baglanti();
 
         String sql1 = "INSERT INTO kutuphane values ('" + kitapid + "','" + kitapadi + "','" + sayfa + "','" + basim + "','" + yayineviid + "')";
         String sql2 = "INSERT INTO sureli values ('" + sureliid + "','" + sayi + "','" + editorid + "','" + kitapid + "')";
-
+        String sql3 = "insert into kutuphane_stok values('" + stokid + "','" + kitapid + "','" + barcode + "','" + status + "')";
         try {
             Statement sta = bag.c.createStatement();
             sta.execute(sql1);
@@ -77,6 +77,15 @@ public class Sureli extends Kutuphane {
             JOptionPane.showMessageDialog(null, "Ekleme Başarısız");
             System.out.println(e.toString());
         }
+        try {
+            Statement sta = bag.c.createStatement();
+            sta.execute(sql3);
+            JOptionPane.showMessageDialog(null, "Ekleme Başarılı");
+        } catch (Exception e) {
+            //
+            JOptionPane.showMessageDialog(null, "Ekleme Başarısız");
+            System.out.println(e.toString());
+        }
         bag.bagKapat();
 
     }
@@ -87,10 +96,21 @@ public class Sureli extends Kutuphane {
         Baglanti bag = new Baglanti();
         String sql1 = "DELETE from kutuphane where kitap_id='" + id + "'";
         String sql2 = "DELETE from sureli where kitap_id='" + id + "'";
+        String sql3 = "DELETE from kutuphane_stok where kitap_id='" + id + "'";
+
         try {
             Statement sta = bag.c.createStatement();
             sta.executeUpdate(sql2);
+            JOptionPane.showMessageDialog(null, "Silme İşlemi Başarılı");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Silme İşlemi Başarısız");
+            System.out.println(e.toString());
 
+        }
+        try {
+            Statement sta = bag.c.createStatement();
+            sta.executeUpdate(sql3);
             JOptionPane.showMessageDialog(null, "Silme İşlemi Başarılı");
         } catch (Exception e) {
             e.printStackTrace();
@@ -108,6 +128,7 @@ public class Sureli extends Kutuphane {
             System.out.println(e.toString());
 
         }
+
         bag.bagKapat();
 
     }
